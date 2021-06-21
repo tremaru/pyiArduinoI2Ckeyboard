@@ -24,7 +24,7 @@ cdef extern from "iarduino_I2C_Keyboard.h":
         bint setPullI2C(bint)
         unsigned char available()
         char readChar()
-        unsigned char readString(unsigned char*, unsigned char, bint=true)
+        unsigned char readString(unsigned char*, unsigned char, bint)
         void flush()
         void setEncoding(unsigned char, unsigned char, char)
         void setEncStr "setEncoding"(char*)

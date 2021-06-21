@@ -31,7 +31,6 @@ set showcmd
 set splitbelow
 set splitright
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set tabstop=4
 set ttimeout
 set ttimeoutlen=100
 set viminfo='20,\"50
@@ -67,9 +66,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 19 + 21) / 42)
+exe '1resize ' . ((&lines * 20 + 21) / 42)
 exe 'vert 1resize ' . ((&columns * 70 + 71) / 142)
-exe '2resize ' . ((&lines * 20 + 21) / 42)
+exe '2resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 2resize ' . ((&columns * 70 + 71) / 142)
 exe '3resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 3resize ' . ((&columns * 71 + 71) / 142)
@@ -87,7 +86,7 @@ setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
-setlocal nocindent
+setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
@@ -196,15 +195,15 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 118 - ((14 * winheight(0) + 9) / 19)
+let s:l = 120 - ((9 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-118
-normal! 014|
+120
+normal! 013|
 wincmd w
 argglobal
-if bufexists("~/Github/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix.pyx") | buffer ~/Github/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix.pyx | else | edit ~/Github/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix.pyx | endif
+if bufexists("iarduino_I2C_Keyboard.pxd") | buffer iarduino_I2C_Keyboard.pxd | else | edit iarduino_I2C_Keyboard.pxd | endif
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -325,12 +324,12 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 128 - ((9 * winheight(0) + 10) / 20)
+let s:l = 47 - ((15 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-128
-normal! 09|
+47
+normal! 024|
 wincmd w
 argglobal
 if bufexists("iarduino_I2C_Keyboard.cpp") | buffer iarduino_I2C_Keyboard.cpp | else | edit iarduino_I2C_Keyboard.cpp | endif
@@ -454,16 +453,16 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 179 - ((9 * winheight(0) + 9) / 19)
+let s:l = 520 - ((9 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-179
-let s:c = 120 - ((31 * winwidth(0) + 35) / 71)
+520
+let s:c = 80 - ((42 * winwidth(0) + 35) / 71)
 if s:c > 0
-  exe 'normal! ' . s:c . '|zs' . 120 . '|'
+  exe 'normal! ' . s:c . '|zs' . 80 . '|'
 else
-  normal! 0120|
+  normal! 080|
 endif
 wincmd w
 argglobal
@@ -588,33 +587,29 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 115 - ((9 * winheight(0) + 10) / 20)
+let s:l = 117 - ((11 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-115
-let s:c = 77 - ((40 * winwidth(0) + 35) / 71)
-if s:c > 0
-  exe 'normal! ' . s:c . '|zs' . 77 . '|'
-else
-  normal! 077|
-endif
+117
+normal! 0
 wincmd w
-3wincmd w
-exe '1resize ' . ((&lines * 19 + 21) / 42)
+exe '1resize ' . ((&lines * 20 + 21) / 42)
 exe 'vert 1resize ' . ((&columns * 70 + 71) / 142)
-exe '2resize ' . ((&lines * 20 + 21) / 42)
+exe '2resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 2resize ' . ((&columns * 70 + 71) / 142)
 exe '3resize ' . ((&lines * 19 + 21) / 42)
 exe 'vert 3resize ' . ((&columns * 71 + 71) / 142)
 exe '4resize ' . ((&lines * 20 + 21) / 42)
 exe 'vert 4resize ' . ((&columns * 71 + 71) / 142)
 tabnext 1
-badd +0 pyiArduinoI2Ckeyboard.pyx
+badd +1 pyiArduinoI2Ckeyboard.pyx
+badd +192 ~/Github/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix.pyx
 badd +0 iarduino_I2C_Keyboard.cpp
+badd +1 iarduino_I2C_Keyboard.h
 badd +153 ~/Github/pyiArduinoI2Cled/pyiArduinoI2Cled/pyiArduinoI2Cled.pyx
-badd +0 ~/Github/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix.pyx
-badd +0 iarduino_I2C_Keyboard.h
+badd +0 iarduino_I2C_Keyboard.pxd
+badd +29 ~/Github/pyiArduinoI2Cmatrix/pyiArduinoI2Cmatrix/iarduino_I2C_Matrix_8x8.pxd
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

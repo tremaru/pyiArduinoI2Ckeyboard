@@ -1,6 +1,7 @@
 # distutils: language = c++
 # cython: language_level = 3
 
+from libc.stdlib cimport malloc
 from iarduino_I2C_Keyboard cimport iarduino_I2C_Keyboard
 #from time import sleep
 
@@ -114,12 +115,25 @@ cdef class pyiArduinoI2Ckeyboard:
     def readChar(self):
         return chr(self.c_module.readChar())
 
-    def readString(self, ln, end):
-        s = ""
-        b = bytearray(s)
+    def readString(self, ln, end=None):
+        if end is None:
+            end = True
+
+        s = u''
+        b = bytearray(s, 'utf-8')
         n = self.c_module.readString(b, ln, end)
-        s = str(b)
-        return b, n
+        st = str(b)
+        return st, n
+
+    """
+    cdef unsigned char readString(self, n, end=None):
+        if end is None:
+            end = True
+        cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))
+        if not c_string:
+            return 0
+        return self.c_module.readString(c_string, n, end)
+        """
 
     def flush(self):
         self.c_module.flush()
