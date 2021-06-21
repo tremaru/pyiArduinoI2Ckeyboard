@@ -115,25 +115,14 @@ cdef class pyiArduinoI2Ckeyboard:
     def readChar(self):
         return chr(self.c_module.readChar())
 
-    def readString(self, ln, end=None):
-        if end is None:
-            end = True
-
-        s = u''
-        b = bytearray(s, 'utf-8')
-        n = self.c_module.readString(b, ln, end)
-        st = str(b)
-        return st, n
-
-    """
-    cdef unsigned char readString(self, n, end=None):
+    def readString(self, n, end=None):
         if end is None:
             end = True
         cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))
         if not c_string:
             return 0
-        return self.c_module.readString(c_string, n, end)
-        """
+        nbytes = self.c_module.readString(c_string, n, end)
+        return c_string, nbytes
 
     def flush(self):
         self.c_module.flush()
@@ -141,9 +130,8 @@ cdef class pyiArduinoI2Ckeyboard:
     def setEncoding(self, col, row = None, sym = None):
         if row is None and sym is None:
             self.c_module.setEncStr(col)
-        elif isinstance(col, int) and isinstance(row, int):
-            if isinstance(sym, str) or isinstance(sym, chr):
-                self.c_module.setEncoding(col, row, sym)
+        else:
+            self.c_module.setEncoding(col, row, ord(sym[0]))
 
     def getEncoding(self, col, row=None):
         if row is None:
