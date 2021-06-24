@@ -14,6 +14,8 @@ cdef extern from "iarduino_I2C_Keyboard.h":
     cdef cppclass iarduino_I2C_Keyboard:
         iarduino_I2C_Keyboard() except +
         iarduino_I2C_Keyboard(unsigned char) except +
+        iarduino_I2C_Keyboard(unsigned char, unsigned char) except +
+        iarduino_I2C_Keyboard(unsigned char, unsigned char, unsigned char) except +
         bint begin()
         bint changeAddress(unsigned char)
         bint reset()

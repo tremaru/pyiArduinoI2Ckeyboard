@@ -53,11 +53,20 @@ NO_BEGIN = 1
 cdef class pyiArduinoI2Ckeyboard:
     cdef iarduino_I2C_Keyboard c_module
 
-    def __cinit__(self, address=None, auto=None):
+    _cols = 5
+    _rows = 2
+
+    def __cinit__(self, address=None, cols=None, rows=None, auto=None):
+
+        if cols is None:
+            cols=self._cols
+
+        if rows is not None:
+            rows=self._rows
 
         if address is not None:
 
-            self.c_module = iarduino_I2C_Keyboard(address)
+            self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
 
             if auto is None:
                 #sleep(.5)

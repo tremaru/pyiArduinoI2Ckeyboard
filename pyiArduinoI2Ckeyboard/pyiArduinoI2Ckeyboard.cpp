@@ -1272,14 +1272,18 @@ static const char __pyx_k_sym[] = "sym";
 static const char __pyx_k_tim[] = "tim";
 static const char __pyx_k_typ[] = "typ";
 static const char __pyx_k_auto[] = "auto";
+static const char __pyx_k_cols[] = "cols";
 static const char __pyx_k_flag[] = "flag";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
+static const char __pyx_k_rows[] = "rows";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_group[] = "group";
 static const char __pyx_k_light[] = "light";
 static const char __pyx_k_print[] = "print";
+static const char __pyx_k_cols_2[] = "_cols";
 static const char __pyx_k_reduce[] = "__reduce__";
+static const char __pyx_k_rows_2[] = "_rows";
 static const char __pyx_k_KEY_ALL[] = "KEY_ALL";
 static const char __pyx_k_LED_ALL[] = "LED_ALL";
 static const char __pyx_k_address[] = "address";
@@ -1376,6 +1380,8 @@ static PyObject *__pyx_n_s_auto;
 static PyObject *__pyx_n_s_chr;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_col;
+static PyObject *__pyx_n_s_cols;
+static PyObject *__pyx_n_s_cols_2;
 static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_f;
 static PyObject *__pyx_n_s_flag;
@@ -1393,13 +1399,15 @@ static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
 static PyObject *__pyx_n_s_row;
+static PyObject *__pyx_n_s_rows;
+static PyObject *__pyx_n_s_rows_2;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
 static PyObject *__pyx_n_s_sym;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_tim;
 static PyObject *__pyx_n_s_typ;
-static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard___cinit__(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self, PyObject *__pyx_v_address, PyObject *__pyx_v_auto); /* proto */
+static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard___cinit__(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self, PyObject *__pyx_v_address, PyObject *__pyx_v_cols, PyObject *__pyx_v_rows, PyObject *__pyx_v_auto); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_2begin(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_4changeAddress(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self, unsigned char __pyx_v_newAddr); /* proto */
 static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_6reset(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self); /* proto */
@@ -1459,31 +1467,39 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_tuple__4;
 /* Late includes */
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":56
- *     cdef iarduino_I2C_Keyboard c_module
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":59
+ *     _rows = 2
  * 
- *     def __cinit__(self, address=None, auto=None):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, address=None, cols=None, rows=None, auto=None):             # <<<<<<<<<<<<<<
  * 
- *         if address is not None:
+ *         if cols is None:
  */
 
 /* Python wrapper */
 static int __pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_address = 0;
+  PyObject *__pyx_v_cols = 0;
+  PyObject *__pyx_v_rows = 0;
   PyObject *__pyx_v_auto = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_address,&__pyx_n_s_auto,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_address,&__pyx_n_s_cols,&__pyx_n_s_rows,&__pyx_n_s_auto,0};
+    PyObject* values[4] = {0,0,0,0};
     values[0] = ((PyObject *)Py_None);
     values[1] = ((PyObject *)Py_None);
+    values[2] = ((PyObject *)Py_None);
+    values[3] = ((PyObject *)Py_None);
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -1501,15 +1517,31 @@ static int __pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_auto);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_cols);
           if (value) { values[1] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_rows);
+          if (value) { values[2] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_auto);
+          if (value) { values[3] = value; kw_args--; }
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 56, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 59, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -1519,62 +1551,134 @@ static int __pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
       }
     }
     __pyx_v_address = values[0];
-    __pyx_v_auto = values[1];
+    __pyx_v_cols = values[1];
+    __pyx_v_rows = values[2];
+    __pyx_v_auto = values[3];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 56, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 59, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard___cinit__(((struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *)__pyx_v_self), __pyx_v_address, __pyx_v_auto);
+  __pyx_r = __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard___cinit__(((struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *)__pyx_v_self), __pyx_v_address, __pyx_v_cols, __pyx_v_rows, __pyx_v_auto);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard___cinit__(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self, PyObject *__pyx_v_address, PyObject *__pyx_v_auto) {
+static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard___cinit__(struct __pyx_obj_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard *__pyx_v_self, PyObject *__pyx_v_address, PyObject *__pyx_v_cols, PyObject *__pyx_v_rows, PyObject *__pyx_v_auto) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   int __pyx_t_2;
-  unsigned char __pyx_t_3;
-  iarduino_I2C_Keyboard __pyx_t_4;
-  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  unsigned char __pyx_t_4;
+  unsigned char __pyx_t_5;
+  unsigned char __pyx_t_6;
+  iarduino_I2C_Keyboard __pyx_t_7;
   __Pyx_RefNannySetupContext("__cinit__", 0);
+  __Pyx_INCREF(__pyx_v_cols);
+  __Pyx_INCREF(__pyx_v_rows);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":58
- *     def __cinit__(self, address=None, auto=None):
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":61
+ *     def __cinit__(self, address=None, cols=None, rows=None, auto=None):
+ * 
+ *         if cols is None:             # <<<<<<<<<<<<<<
+ *             cols=self._cols
+ * 
+ */
+  __pyx_t_1 = (__pyx_v_cols == Py_None);
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":62
+ * 
+ *         if cols is None:
+ *             cols=self._cols             # <<<<<<<<<<<<<<
+ * 
+ *         if rows is not None:
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_cols_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF_SET(__pyx_v_cols, __pyx_t_3);
+    __pyx_t_3 = 0;
+
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":61
+ *     def __cinit__(self, address=None, cols=None, rows=None, auto=None):
+ * 
+ *         if cols is None:             # <<<<<<<<<<<<<<
+ *             cols=self._cols
+ * 
+ */
+  }
+
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":64
+ *             cols=self._cols
+ * 
+ *         if rows is not None:             # <<<<<<<<<<<<<<
+ *             rows=self._rows
+ * 
+ */
+  __pyx_t_2 = (__pyx_v_rows != Py_None);
+  __pyx_t_1 = (__pyx_t_2 != 0);
+  if (__pyx_t_1) {
+
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":65
+ * 
+ *         if rows is not None:
+ *             rows=self._rows             # <<<<<<<<<<<<<<
+ * 
+ *         if address is not None:
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_rows_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF_SET(__pyx_v_rows, __pyx_t_3);
+    __pyx_t_3 = 0;
+
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":64
+ *             cols=self._cols
+ * 
+ *         if rows is not None:             # <<<<<<<<<<<<<<
+ *             rows=self._rows
+ * 
+ */
+  }
+
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":67
+ *             rows=self._rows
  * 
  *         if address is not None:             # <<<<<<<<<<<<<<
  * 
- *             self.c_module = iarduino_I2C_Keyboard(address)
+ *             self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
  */
   __pyx_t_1 = (__pyx_v_address != Py_None);
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":60
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":69
  *         if address is not None:
  * 
- *             self.c_module = iarduino_I2C_Keyboard(address)             # <<<<<<<<<<<<<<
+ *             self.c_module = iarduino_I2C_Keyboard(address, cols, rows)             # <<<<<<<<<<<<<<
  * 
  *             if auto is None:
  */
-    __pyx_t_3 = __Pyx_PyInt_As_unsigned_char(__pyx_v_address); if (unlikely((__pyx_t_3 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_address); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_cols); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_rows); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 69, __pyx_L1_error)
     try {
-      __pyx_t_4 = iarduino_I2C_Keyboard(__pyx_t_3);
+      __pyx_t_7 = iarduino_I2C_Keyboard(__pyx_t_4, __pyx_t_5, __pyx_t_6);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 60, __pyx_L1_error)
+      __PYX_ERR(0, 69, __pyx_L1_error)
     }
-    __pyx_v_self->c_module = __pyx_t_4;
+    __pyx_v_self->c_module = __pyx_t_7;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":62
- *             self.c_module = iarduino_I2C_Keyboard(address)
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":71
+ *             self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
  * 
  *             if auto is None:             # <<<<<<<<<<<<<<
  *                 #sleep(.5)
@@ -1584,7 +1688,7 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
     __pyx_t_1 = (__pyx_t_2 != 0);
     if (__pyx_t_1) {
 
-      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":64
+      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":73
  *             if auto is None:
  *                 #sleep(.5)
  *                 if not self.c_module.begin():             # <<<<<<<<<<<<<<
@@ -1594,18 +1698,18 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
       __pyx_t_1 = ((!(__pyx_v_self->c_module.begin() != 0)) != 0);
       if (__pyx_t_1) {
 
-        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":66
+        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":75
  *                 if not self.c_module.begin():
  * 
  *                     print("  .\n"             # <<<<<<<<<<<<<<
  *                           "    ,"
  *                           "     I2C.\n"
  */
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":64
+        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":73
  *             if auto is None:
  *                 #sleep(.5)
  *                 if not self.c_module.begin():             # <<<<<<<<<<<<<<
@@ -1614,8 +1718,8 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
  */
       }
 
-      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":62
- *             self.c_module = iarduino_I2C_Keyboard(address)
+      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":71
+ *             self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
  * 
  *             if auto is None:             # <<<<<<<<<<<<<<
  *                 #sleep(.5)
@@ -1623,17 +1727,17 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
  */
     }
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":58
- *     def __cinit__(self, address=None, auto=None):
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":67
+ *             rows=self._rows
  * 
  *         if address is not None:             # <<<<<<<<<<<<<<
  * 
- *             self.c_module = iarduino_I2C_Keyboard(address)
+ *             self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
  */
-    goto __pyx_L3;
+    goto __pyx_L5;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":75
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":84
  *         else:
  * 
  *             self.c_module = iarduino_I2C_Keyboard()             # <<<<<<<<<<<<<<
@@ -1642,14 +1746,14 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
  */
   /*else*/ {
     try {
-      __pyx_t_4 = iarduino_I2C_Keyboard();
+      __pyx_t_7 = iarduino_I2C_Keyboard();
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 75, __pyx_L1_error)
+      __PYX_ERR(0, 84, __pyx_L1_error)
     }
-    __pyx_v_self->c_module = __pyx_t_4;
+    __pyx_v_self->c_module = __pyx_t_7;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":77
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":86
  *             self.c_module = iarduino_I2C_Keyboard()
  * 
  *             if auto is None:             # <<<<<<<<<<<<<<
@@ -1660,7 +1764,7 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
     __pyx_t_2 = (__pyx_t_1 != 0);
     if (__pyx_t_2) {
 
-      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":79
+      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":88
  *             if auto is None:
  *                 #sleep(.5)
  *                 if not self.c_module.begin():             # <<<<<<<<<<<<<<
@@ -1670,18 +1774,18 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
       __pyx_t_2 = ((!(__pyx_v_self->c_module.begin() != 0)) != 0);
       if (__pyx_t_2) {
 
-        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":81
+        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":90
  *                 if not self.c_module.begin():
  * 
  *                     print("  .\n"             # <<<<<<<<<<<<<<
  *                           "    , "
  *                           "     I2C.\n"
  */
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 81, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":79
+        /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":88
  *             if auto is None:
  *                 #sleep(.5)
  *                 if not self.c_module.begin():             # <<<<<<<<<<<<<<
@@ -1690,7 +1794,7 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
  */
       }
 
-      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":77
+      /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":86
  *             self.c_module = iarduino_I2C_Keyboard()
  * 
  *             if auto is None:             # <<<<<<<<<<<<<<
@@ -1699,29 +1803,31 @@ static int __pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiArduino
  */
     }
   }
-  __pyx_L3:;
+  __pyx_L5:;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":56
- *     cdef iarduino_I2C_Keyboard c_module
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":59
+ *     _rows = 2
  * 
- *     def __cinit__(self, address=None, auto=None):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, address=None, cols=None, rows=None, auto=None):             # <<<<<<<<<<<<<<
  * 
- *         if address is not None:
+ *         if cols is None:
  */
 
   /* function exit code */
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_cols);
+  __Pyx_XDECREF(__pyx_v_rows);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":88
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":97
  *                           " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
  * 
  *     def begin(self):             # <<<<<<<<<<<<<<
@@ -1748,7 +1854,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("begin", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":89
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":98
  * 
  *     def begin(self):
  *         return self.c_module.begin()             # <<<<<<<<<<<<<<
@@ -1756,13 +1862,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def changeAddress(self, unsigned char newAddr):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.begin()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.begin()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":88
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":97
  *                           " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
  * 
  *     def begin(self):             # <<<<<<<<<<<<<<
@@ -1781,7 +1887,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":91
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":100
  *         return self.c_module.begin()
  * 
  *     def changeAddress(self, unsigned char newAddr):             # <<<<<<<<<<<<<<
@@ -1797,7 +1903,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("changeAddress (wrapper)", 0);
   assert(__pyx_arg_newAddr); {
-    __pyx_v_newAddr = __Pyx_PyInt_As_unsigned_char(__pyx_arg_newAddr); if (unlikely((__pyx_v_newAddr == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+    __pyx_v_newAddr = __Pyx_PyInt_As_unsigned_char(__pyx_arg_newAddr); if (unlikely((__pyx_v_newAddr == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1818,7 +1924,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("changeAddress", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":92
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":101
  * 
  *     def changeAddress(self, unsigned char newAddr):
  *         return self.c_module.changeAddress(newAddr)             # <<<<<<<<<<<<<<
@@ -1826,13 +1932,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def reset(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.changeAddress(__pyx_v_newAddr)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.changeAddress(__pyx_v_newAddr)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":91
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":100
  *         return self.c_module.begin()
  * 
  *     def changeAddress(self, unsigned char newAddr):             # <<<<<<<<<<<<<<
@@ -1851,7 +1957,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":94
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":103
  *         return self.c_module.changeAddress(newAddr)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
@@ -1878,7 +1984,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("reset", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":95
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":104
  * 
  *     def reset(self):
  *         return self.c_module.reset()             # <<<<<<<<<<<<<<
@@ -1886,13 +1992,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def getAddress(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.reset()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.reset()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":94
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":103
  *         return self.c_module.changeAddress(newAddr)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
@@ -1911,7 +2017,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":97
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":106
  *         return self.c_module.reset()
  * 
  *     def getAddress(self):             # <<<<<<<<<<<<<<
@@ -1938,7 +2044,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getAddress", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":98
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":107
  * 
  *     def getAddress(self):
  *         return self.c_module.getAddress()             # <<<<<<<<<<<<<<
@@ -1946,13 +2052,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def getVersion(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getAddress()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getAddress()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":97
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":106
  *         return self.c_module.reset()
  * 
  *     def getAddress(self):             # <<<<<<<<<<<<<<
@@ -1971,7 +2077,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":100
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":109
  *         return self.c_module.getAddress()
  * 
  *     def getVersion(self):             # <<<<<<<<<<<<<<
@@ -1998,7 +2104,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getVersion", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":101
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":110
  * 
  *     def getVersion(self):
  *         return self.c_module.getVersion()             # <<<<<<<<<<<<<<
@@ -2006,13 +2112,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def getPullI2C(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getVersion()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getVersion()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":100
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":109
  *         return self.c_module.getAddress()
  * 
  *     def getVersion(self):             # <<<<<<<<<<<<<<
@@ -2031,7 +2137,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":103
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":112
  *         return self.c_module.getVersion()
  * 
  *     def getPullI2C(self):             # <<<<<<<<<<<<<<
@@ -2058,7 +2164,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getPullI2C", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":104
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":113
  * 
  *     def getPullI2C(self):
  *         return self.c_module.getPullI2C()             # <<<<<<<<<<<<<<
@@ -2066,13 +2172,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def setPullI2C(self, flag=None):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.getPullI2C()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.getPullI2C()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":103
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":112
  *         return self.c_module.getVersion()
  * 
  *     def getPullI2C(self):             # <<<<<<<<<<<<<<
@@ -2091,7 +2197,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":106
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":115
  *         return self.c_module.getPullI2C()
  * 
  *     def setPullI2C(self, flag=None):             # <<<<<<<<<<<<<<
@@ -2128,7 +2234,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setPullI2C") < 0)) __PYX_ERR(0, 106, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setPullI2C") < 0)) __PYX_ERR(0, 115, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2142,7 +2248,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setPullI2C", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 106, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("setPullI2C", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 115, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.setPullI2C", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2163,7 +2269,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("setPullI2C", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":107
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":116
  * 
  *     def setPullI2C(self, flag=None):
  *         if flag is not None:             # <<<<<<<<<<<<<<
@@ -2174,7 +2280,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":108
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":117
  *     def setPullI2C(self, flag=None):
  *         if flag is not None:
  *             return self.c_module.setPullI2C(flag)             # <<<<<<<<<<<<<<
@@ -2182,14 +2288,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *             return self.c_module.setPullI2C(True)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_flag); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setPullI2C(__pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_flag); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setPullI2C(__pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":107
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":116
  * 
  *     def setPullI2C(self, flag=None):
  *         if flag is not None:             # <<<<<<<<<<<<<<
@@ -2198,7 +2304,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":110
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":119
  *             return self.c_module.setPullI2C(flag)
  *         else:
  *             return self.c_module.setPullI2C(True)             # <<<<<<<<<<<<<<
@@ -2207,14 +2313,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setPullI2C(1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_v_self->c_module.setPullI2C(1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":106
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":115
  *         return self.c_module.getPullI2C()
  * 
  *     def setPullI2C(self, flag=None):             # <<<<<<<<<<<<<<
@@ -2233,7 +2339,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":112
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":121
  *             return self.c_module.setPullI2C(True)
  * 
  *     def available(self):             # <<<<<<<<<<<<<<
@@ -2260,7 +2366,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("available", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":113
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":122
  * 
  *     def available(self):
  *         return self.c_module.available()             # <<<<<<<<<<<<<<
@@ -2268,13 +2374,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def readChar(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.available()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.available()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":112
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":121
  *             return self.c_module.setPullI2C(True)
  * 
  *     def available(self):             # <<<<<<<<<<<<<<
@@ -2293,7 +2399,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":115
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":124
  *         return self.c_module.available()
  * 
  *     def readChar(self):             # <<<<<<<<<<<<<<
@@ -2321,7 +2427,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("readChar", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":116
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":125
  * 
  *     def readChar(self):
  *         return chr(self.c_module.readChar())             # <<<<<<<<<<<<<<
@@ -2329,16 +2435,16 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def readString(self, n, end=None):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_char(__pyx_v_self->c_module.readChar()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_char(__pyx_v_self->c_module.readChar()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_chr, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_chr, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":115
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":124
  *         return self.c_module.available()
  * 
  *     def readChar(self):             # <<<<<<<<<<<<<<
@@ -2358,7 +2464,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":118
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":127
  *         return chr(self.c_module.readChar())
  * 
  *     def readString(self, n, end=None):             # <<<<<<<<<<<<<<
@@ -2402,7 +2508,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "readString") < 0)) __PYX_ERR(0, 118, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "readString") < 0)) __PYX_ERR(0, 127, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2418,7 +2524,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("readString", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 118, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("readString", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 127, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.readString", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2446,7 +2552,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __Pyx_RefNannySetupContext("readString", 0);
   __Pyx_INCREF(__pyx_v_end);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":119
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":128
  * 
  *     def readString(self, n, end=None):
  *         if end is None:             # <<<<<<<<<<<<<<
@@ -2457,7 +2563,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":120
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":129
  *     def readString(self, n, end=None):
  *         if end is None:
  *             end = True             # <<<<<<<<<<<<<<
@@ -2467,7 +2573,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
     __Pyx_INCREF(Py_True);
     __Pyx_DECREF_SET(__pyx_v_end, Py_True);
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":119
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":128
  * 
  *     def readString(self, n, end=None):
  *         if end is None:             # <<<<<<<<<<<<<<
@@ -2476,26 +2582,26 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":121
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":130
  *         if end is None:
  *             end = True
  *         cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))             # <<<<<<<<<<<<<<
  *         if not c_string:
  *             return 0
  */
-  __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_n, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_n, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_FromSize_t((sizeof(char))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyNumber_Multiply(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_Multiply(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_t_5); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_t_5); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_c_string = ((unsigned char *)malloc(__pyx_t_6));
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":122
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":131
  *             end = True
  *         cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))
  *         if not c_string:             # <<<<<<<<<<<<<<
@@ -2505,7 +2611,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = ((!(__pyx_v_c_string != 0)) != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":123
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":132
  *         cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))
  *         if not c_string:
  *             return 0             # <<<<<<<<<<<<<<
@@ -2517,7 +2623,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
     __pyx_r = __pyx_int_0;
     goto __pyx_L0;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":122
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":131
  *             end = True
  *         cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))
  *         if not c_string:             # <<<<<<<<<<<<<<
@@ -2526,18 +2632,18 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":124
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":133
  *         if not c_string:
  *             return 0
  *         nbytes = self.c_module.readString(c_string, n, end)             # <<<<<<<<<<<<<<
  *         return c_string, nbytes
  * 
  */
-  __pyx_t_7 = __Pyx_PyInt_As_unsigned_char(__pyx_v_n); if (unlikely((__pyx_t_7 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_end); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyInt_As_unsigned_char(__pyx_v_n); if (unlikely((__pyx_t_7 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_end); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
   __pyx_v_nbytes = __pyx_v_self->c_module.readString(__pyx_v_c_string, __pyx_t_7, __pyx_t_2);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":125
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":134
  *             return 0
  *         nbytes = self.c_module.readString(c_string, n, end)
  *         return c_string, nbytes             # <<<<<<<<<<<<<<
@@ -2545,11 +2651,11 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def flush(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_PyBytes_FromCString(__pyx_v_c_string); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyBytes_FromCString(__pyx_v_c_string); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyInt_From_unsigned_char(__pyx_v_nbytes); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_unsigned_char(__pyx_v_nbytes); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5);
@@ -2561,7 +2667,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":118
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":127
  *         return chr(self.c_module.readChar())
  * 
  *     def readString(self, n, end=None):             # <<<<<<<<<<<<<<
@@ -2583,7 +2689,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":127
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":136
  *         return c_string, nbytes
  * 
  *     def flush(self):             # <<<<<<<<<<<<<<
@@ -2609,7 +2715,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("flush", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":128
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":137
  * 
  *     def flush(self):
  *         self.c_module.flush()             # <<<<<<<<<<<<<<
@@ -2618,7 +2724,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   __pyx_v_self->c_module.flush();
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":127
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":136
  *         return c_string, nbytes
  * 
  *     def flush(self):             # <<<<<<<<<<<<<<
@@ -2633,7 +2739,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":130
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":139
  *         self.c_module.flush()
  * 
  *     def setEncoding(self, col, row = None, sym = None):             # <<<<<<<<<<<<<<
@@ -2687,7 +2793,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setEncoding") < 0)) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setEncoding") < 0)) __PYX_ERR(0, 139, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2706,7 +2812,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setEncoding", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 130, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("setEncoding", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 139, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.setEncoding", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2732,7 +2838,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   long __pyx_t_8;
   __Pyx_RefNannySetupContext("setEncoding", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":131
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":140
  * 
  *     def setEncoding(self, col, row = None, sym = None):
  *         if row is None and sym is None:             # <<<<<<<<<<<<<<
@@ -2752,17 +2858,17 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":132
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":141
  *     def setEncoding(self, col, row = None, sym = None):
  *         if row is None and sym is None:
  *             self.c_module.setEncStr(col)             # <<<<<<<<<<<<<<
  *         else:
  *             self.c_module.setEncoding(col, row, ord(sym[0]))
  */
-    __pyx_t_4 = __Pyx_PyObject_AsWritableString(__pyx_v_col); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_AsWritableString(__pyx_v_col); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 141, __pyx_L1_error)
     __pyx_v_self->c_module.setEncoding(__pyx_t_4);
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":131
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":140
  * 
  *     def setEncoding(self, col, row = None, sym = None):
  *         if row is None and sym is None:             # <<<<<<<<<<<<<<
@@ -2772,7 +2878,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
     goto __pyx_L3;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":134
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":143
  *             self.c_module.setEncStr(col)
  *         else:
  *             self.c_module.setEncoding(col, row, ord(sym[0]))             # <<<<<<<<<<<<<<
@@ -2780,17 +2886,17 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def getEncoding(self, col, row=None):
  */
   /*else*/ {
-    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L1_error)
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_sym, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_sym, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyObject_Ord(__pyx_t_7); if (unlikely(__pyx_t_8 == ((long)(long)(Py_UCS4)-1))) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Ord(__pyx_t_7); if (unlikely(__pyx_t_8 == ((long)(long)(Py_UCS4)-1))) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_self->c_module.setEncoding(__pyx_t_5, __pyx_t_6, __pyx_t_8);
   }
   __pyx_L3:;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":130
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":139
  *         self.c_module.flush()
  * 
  *     def setEncoding(self, col, row = None, sym = None):             # <<<<<<<<<<<<<<
@@ -2811,7 +2917,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":136
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":145
  *             self.c_module.setEncoding(col, row, ord(sym[0]))
  * 
  *     def getEncoding(self, col, row=None):             # <<<<<<<<<<<<<<
@@ -2855,7 +2961,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getEncoding") < 0)) __PYX_ERR(0, 136, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getEncoding") < 0)) __PYX_ERR(0, 145, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2871,7 +2977,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getEncoding", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 136, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getEncoding", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 145, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.getEncoding", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2895,7 +3001,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned char __pyx_t_6;
   __Pyx_RefNannySetupContext("getEncoding", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":137
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":146
  * 
  *     def getEncoding(self, col, row=None):
  *         if row is None:             # <<<<<<<<<<<<<<
@@ -2906,7 +3012,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":138
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":147
  *     def getEncoding(self, col, row=None):
  *         if row is None:
  *             return self.c_module.getEncChar(col)             # <<<<<<<<<<<<<<
@@ -2914,14 +3020,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *             return self.c_module.getEncoding(col, row)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getEncoding(__pyx_t_3)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 138, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getEncoding(__pyx_t_3)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":137
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":146
  * 
  *     def getEncoding(self, col, row=None):
  *         if row is None:             # <<<<<<<<<<<<<<
@@ -2930,7 +3036,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":140
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":149
  *             return self.c_module.getEncChar(col)
  *         else:
  *             return self.c_module.getEncoding(col, row)             # <<<<<<<<<<<<<<
@@ -2939,16 +3045,16 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_From_char(__pyx_v_self->c_module.getEncoding(__pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_char(__pyx_v_self->c_module.getEncoding(__pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 149, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
     goto __pyx_L0;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":136
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":145
  *             self.c_module.setEncoding(col, row, ord(sym[0]))
  * 
  *     def getEncoding(self, col, row=None):             # <<<<<<<<<<<<<<
@@ -2967,7 +3073,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":143
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":152
  * 
  * 
  *     def setDelay(self, tim):             # <<<<<<<<<<<<<<
@@ -2994,17 +3100,17 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned short __pyx_t_1;
   __Pyx_RefNannySetupContext("setDelay", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":144
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":153
  * 
  *     def setDelay(self, tim):
  *         self.c_module.setDelay(tim)             # <<<<<<<<<<<<<<
  * 
  *     def getDelay(self):
  */
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_short(__pyx_v_tim); if (unlikely((__pyx_t_1 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_short(__pyx_v_tim); if (unlikely((__pyx_t_1 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L1_error)
   __pyx_v_self->c_module.setDelay(__pyx_t_1);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":143
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":152
  * 
  * 
  *     def setDelay(self, tim):             # <<<<<<<<<<<<<<
@@ -3024,7 +3130,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":146
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":155
  *         self.c_module.setDelay(tim)
  * 
  *     def getDelay(self):             # <<<<<<<<<<<<<<
@@ -3051,7 +3157,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getDelay", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":147
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":156
  * 
  *     def getDelay(self):
  *         return self.c_module.getDelay()             # <<<<<<<<<<<<<<
@@ -3059,13 +3165,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def setPeriod(self, tim):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getDelay()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getDelay()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":146
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":155
  *         self.c_module.setDelay(tim)
  * 
  *     def getDelay(self):             # <<<<<<<<<<<<<<
@@ -3084,7 +3190,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":149
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":158
  *         return self.c_module.getDelay()
  * 
  *     def setPeriod(self, tim):             # <<<<<<<<<<<<<<
@@ -3111,17 +3217,17 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned short __pyx_t_1;
   __Pyx_RefNannySetupContext("setPeriod", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":150
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":159
  * 
  *     def setPeriod(self, tim):
  *         self.c_module.setPeriod(tim)             # <<<<<<<<<<<<<<
  * 
  *     def getPeriod(self):
  */
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_short(__pyx_v_tim); if (unlikely((__pyx_t_1 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_short(__pyx_v_tim); if (unlikely((__pyx_t_1 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
   __pyx_v_self->c_module.setPeriod(__pyx_t_1);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":149
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":158
  *         return self.c_module.getDelay()
  * 
  *     def setPeriod(self, tim):             # <<<<<<<<<<<<<<
@@ -3141,7 +3247,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":152
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":161
  *         self.c_module.setPeriod(tim)
  * 
  *     def getPeriod(self):             # <<<<<<<<<<<<<<
@@ -3168,7 +3274,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getPeriod", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":153
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":162
  * 
  *     def getPeriod(self):
  *         return self.c_module.getPeriod()             # <<<<<<<<<<<<<<
@@ -3176,13 +3282,13 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def getKey(self, col, row, typ=None):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getPeriod()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getPeriod()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":152
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":161
  *         self.c_module.setPeriod(tim)
  * 
  *     def getPeriod(self):             # <<<<<<<<<<<<<<
@@ -3201,7 +3307,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":155
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":164
  *         return self.c_module.getPeriod()
  * 
  *     def getKey(self, col, row, typ=None):             # <<<<<<<<<<<<<<
@@ -3244,7 +3350,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_row)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("getKey", 0, 2, 3, 1); __PYX_ERR(0, 155, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("getKey", 0, 2, 3, 1); __PYX_ERR(0, 164, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -3254,7 +3360,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getKey") < 0)) __PYX_ERR(0, 155, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getKey") < 0)) __PYX_ERR(0, 164, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3272,7 +3378,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getKey", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 155, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getKey", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 164, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.getKey", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3297,7 +3403,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned char __pyx_t_7;
   __Pyx_RefNannySetupContext("getKey", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":156
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":165
  * 
  *     def getKey(self, col, row, typ=None):
  *         if typ is None:             # <<<<<<<<<<<<<<
@@ -3308,7 +3414,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":157
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":166
  *     def getKey(self, col, row, typ=None):
  *         if typ is None:
  *             return self.c_module.getKeyChar(col, row)             # <<<<<<<<<<<<<<
@@ -3316,15 +3422,15 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *             return self.c_module.getKey(col, row, typ)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 157, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 157, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getKey(__pyx_t_3, __pyx_t_4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 157, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 166, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 166, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getKey(__pyx_t_3, __pyx_t_4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
     goto __pyx_L0;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":156
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":165
  * 
  *     def getKey(self, col, row, typ=None):
  *         if typ is None:             # <<<<<<<<<<<<<<
@@ -3333,7 +3439,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":159
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":168
  *             return self.c_module.getKeyChar(col, row)
  *         else:
  *             return self.c_module.getKey(col, row, typ)             # <<<<<<<<<<<<<<
@@ -3342,17 +3448,17 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
-    __pyx_t_7 = __Pyx_PyInt_As_unsigned_char(__pyx_v_typ); if (unlikely((__pyx_t_7 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getKey(__pyx_t_4, __pyx_t_6, __pyx_t_7)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 159, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_As_unsigned_char(__pyx_v_typ); if (unlikely((__pyx_t_7 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getKey(__pyx_t_4, __pyx_t_6, __pyx_t_7)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
     goto __pyx_L0;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":155
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":164
  *         return self.c_module.getPeriod()
  * 
  *     def getKey(self, col, row, typ=None):             # <<<<<<<<<<<<<<
@@ -3371,7 +3477,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":161
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":170
  *             return self.c_module.getKey(col, row, typ)
  * 
  *     def getTime(self, col, row, typ=None):             # <<<<<<<<<<<<<<
@@ -3414,7 +3520,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_row)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("getTime", 0, 2, 3, 1); __PYX_ERR(0, 161, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("getTime", 0, 2, 3, 1); __PYX_ERR(0, 170, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -3424,7 +3530,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getTime") < 0)) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getTime") < 0)) __PYX_ERR(0, 170, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3442,7 +3548,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getTime", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 161, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getTime", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 170, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.getTime", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3467,7 +3573,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned char __pyx_t_7;
   __Pyx_RefNannySetupContext("getTime", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":162
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":171
  * 
  *     def getTime(self, col, row, typ=None):
  *         if typ is None:             # <<<<<<<<<<<<<<
@@ -3478,7 +3584,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":163
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":172
  *     def getTime(self, col, row, typ=None):
  *         if typ is None:
  *             return self.c_module.getTimeChar(col, row)             # <<<<<<<<<<<<<<
@@ -3486,15 +3592,15 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *             return self.c_module.getTime(col, row, typ)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getTime(__pyx_t_3, __pyx_t_4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getTime(__pyx_t_3, __pyx_t_4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
     goto __pyx_L0;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":162
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":171
  * 
  *     def getTime(self, col, row, typ=None):
  *         if typ is None:             # <<<<<<<<<<<<<<
@@ -3503,7 +3609,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":165
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":174
  *             return self.c_module.getTimeChar(col, row)
  *         else:
  *             return self.c_module.getTime(col, row, typ)             # <<<<<<<<<<<<<<
@@ -3512,17 +3618,17 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 165, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 165, __pyx_L1_error)
-    __pyx_t_7 = __Pyx_PyInt_As_unsigned_char(__pyx_v_typ); if (unlikely((__pyx_t_7 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 165, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getTime(__pyx_t_4, __pyx_t_6, __pyx_t_7)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_4 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_As_unsigned_char(__pyx_v_typ); if (unlikely((__pyx_t_7 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getTime(__pyx_t_4, __pyx_t_6, __pyx_t_7)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
     goto __pyx_L0;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":161
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":170
  *             return self.c_module.getKey(col, row, typ)
  * 
  *     def getTime(self, col, row, typ=None):             # <<<<<<<<<<<<<<
@@ -3541,7 +3647,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":167
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":176
  *             return self.c_module.getTime(col, row, typ)
  * 
  *     def setLed(self, col, row, f=None):             # <<<<<<<<<<<<<<
@@ -3584,7 +3690,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_row)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("setLed", 0, 2, 3, 1); __PYX_ERR(0, 167, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("setLed", 0, 2, 3, 1); __PYX_ERR(0, 176, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -3594,7 +3700,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setLed") < 0)) __PYX_ERR(0, 167, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setLed") < 0)) __PYX_ERR(0, 176, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3612,7 +3718,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setLed", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 167, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("setLed", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 176, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.setLed", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3636,7 +3742,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned char __pyx_t_6;
   __Pyx_RefNannySetupContext("setLed", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":168
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":177
  * 
  *     def setLed(self, col, row, f=None):
  *         if f is None:             # <<<<<<<<<<<<<<
@@ -3647,18 +3753,18 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":169
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":178
  *     def setLed(self, col, row, f=None):
  *         if f is None:
  *             self.c_module.setLedChar(col, row)             # <<<<<<<<<<<<<<
  *         else:
  *             self.c_module.setLed(col, row, f)
  */
-    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_short(__pyx_v_row); if (unlikely((__pyx_t_4 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_short(__pyx_v_row); if (unlikely((__pyx_t_4 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 178, __pyx_L1_error)
     __pyx_v_self->c_module.setLed(__pyx_t_3, __pyx_t_4);
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":168
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":177
  * 
  *     def setLed(self, col, row, f=None):
  *         if f is None:             # <<<<<<<<<<<<<<
@@ -3668,7 +3774,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
     goto __pyx_L3;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":171
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":180
  *             self.c_module.setLedChar(col, row)
  *         else:
  *             self.c_module.setLed(col, row, f)             # <<<<<<<<<<<<<<
@@ -3676,14 +3782,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def getLed(self, col, row=None):
  */
   /*else*/ {
-    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_short(__pyx_v_f); if (unlikely((__pyx_t_4 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_unsigned_short(__pyx_v_f); if (unlikely((__pyx_t_4 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 180, __pyx_L1_error)
     __pyx_v_self->c_module.setLed(__pyx_t_5, __pyx_t_6, __pyx_t_4);
   }
   __pyx_L3:;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":167
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":176
  *             return self.c_module.getTime(col, row, typ)
  * 
  *     def setLed(self, col, row, f=None):             # <<<<<<<<<<<<<<
@@ -3703,7 +3809,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":173
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":182
  *             self.c_module.setLed(col, row, f)
  * 
  *     def getLed(self, col, row=None):             # <<<<<<<<<<<<<<
@@ -3747,7 +3853,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getLed") < 0)) __PYX_ERR(0, 173, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getLed") < 0)) __PYX_ERR(0, 182, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3763,7 +3869,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getLed", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 173, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getLed", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 182, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.getLed", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3787,7 +3893,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned char __pyx_t_6;
   __Pyx_RefNannySetupContext("getLed", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":174
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":183
  * 
  *     def getLed(self, col, row=None):
  *         if row is None:             # <<<<<<<<<<<<<<
@@ -3798,7 +3904,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":175
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":184
  *     def getLed(self, col, row=None):
  *         if row is None:
  *             return self.c_module.getLedChar(col)             # <<<<<<<<<<<<<<
@@ -3806,14 +3912,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *             return self.c_module.getLed(col, row)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getLed(__pyx_t_3)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_As_char(__pyx_v_col); if (unlikely((__pyx_t_3 == (char)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getLed(__pyx_t_3)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":174
+    /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":183
  * 
  *     def getLed(self, col, row=None):
  *         if row is None:             # <<<<<<<<<<<<<<
@@ -3822,7 +3928,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":177
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":186
  *             return self.c_module.getLedChar(col)
  *         else:
  *             return self.c_module.getLed(col, row)             # <<<<<<<<<<<<<<
@@ -3831,16 +3937,16 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 177, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 177, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getLed(__pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 177, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_unsigned_char(__pyx_v_col); if (unlikely((__pyx_t_5 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_unsigned_char(__pyx_v_row); if (unlikely((__pyx_t_6 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_self->c_module.getLed(__pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 186, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
     goto __pyx_L0;
   }
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":173
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":182
  *             self.c_module.setLed(col, row, f)
  * 
  *     def getLed(self, col, row=None):             # <<<<<<<<<<<<<<
@@ -3859,7 +3965,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":179
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":188
  *             return self.c_module.getLed(col, row)
  * 
  *     def setLight(self, light, group):             # <<<<<<<<<<<<<<
@@ -3898,11 +4004,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_group)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("setLight", 1, 2, 2, 1); __PYX_ERR(0, 179, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("setLight", 1, 2, 2, 1); __PYX_ERR(0, 188, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setLight") < 0)) __PYX_ERR(0, 179, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setLight") < 0)) __PYX_ERR(0, 188, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3915,7 +4021,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setLight", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 179, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("setLight", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 188, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.setLight", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3935,18 +4041,18 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned char __pyx_t_2;
   __Pyx_RefNannySetupContext("setLight", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":180
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":189
  * 
  *     def setLight(self, light, group):
  *         self.c_module.setLight(light, group)             # <<<<<<<<<<<<<<
  * 
  *     def getLight(self, group):
  */
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_light); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 180, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_unsigned_char(__pyx_v_group); if (unlikely((__pyx_t_2 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_light); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 189, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_unsigned_char(__pyx_v_group); if (unlikely((__pyx_t_2 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 189, __pyx_L1_error)
   __pyx_v_self->c_module.setLight(__pyx_t_1, __pyx_t_2);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":179
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":188
  *             return self.c_module.getLed(col, row)
  * 
  *     def setLight(self, light, group):             # <<<<<<<<<<<<<<
@@ -3966,7 +4072,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":182
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":191
  *         self.c_module.setLight(light, group)
  * 
  *     def getLight(self, group):             # <<<<<<<<<<<<<<
@@ -3994,7 +4100,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("getLight", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":183
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":192
  * 
  *     def getLight(self, group):
  *         return self.c_module.getLight(group)             # <<<<<<<<<<<<<<
@@ -4002,14 +4108,14 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
  *     def setAnimation(self, num, tim):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_group); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getLight(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_group); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getLight(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":182
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":191
  *         self.c_module.setLight(light, group)
  * 
  *     def getLight(self, group):             # <<<<<<<<<<<<<<
@@ -4028,7 +4134,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":185
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":194
  *         return self.c_module.getLight(group)
  * 
  *     def setAnimation(self, num, tim):             # <<<<<<<<<<<<<<
@@ -4067,11 +4173,11 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_tim)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("setAnimation", 1, 2, 2, 1); __PYX_ERR(0, 185, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("setAnimation", 1, 2, 2, 1); __PYX_ERR(0, 194, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setAnimation") < 0)) __PYX_ERR(0, 185, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setAnimation") < 0)) __PYX_ERR(0, 194, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4084,7 +4190,7 @@ static PyObject *__pyx_pw_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setAnimation", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 185, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("setAnimation", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 194, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.pyiArduinoI2Ckeyboard.setAnimation", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4104,18 +4210,18 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   unsigned short __pyx_t_2;
   __Pyx_RefNannySetupContext("setAnimation", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":186
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":195
  * 
  *     def setAnimation(self, num, tim):
  *         self.c_module.setAnimation(num, tim)             # <<<<<<<<<<<<<<
  * 
  *     def getAnimation(self):
  */
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_num); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_unsigned_short(__pyx_v_tim); if (unlikely((__pyx_t_2 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_char(__pyx_v_num); if (unlikely((__pyx_t_1 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_unsigned_short(__pyx_v_tim); if (unlikely((__pyx_t_2 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L1_error)
   __pyx_v_self->c_module.setAnimation(__pyx_t_1, __pyx_t_2);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":185
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":194
  *         return self.c_module.getLight(group)
  * 
  *     def setAnimation(self, num, tim):             # <<<<<<<<<<<<<<
@@ -4135,7 +4241,7 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   return __pyx_r;
 }
 
-/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":188
+/* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":197
  *         self.c_module.setAnimation(num, tim)
  * 
  *     def getAnimation(self):             # <<<<<<<<<<<<<<
@@ -4162,20 +4268,20 @@ static PyObject *__pyx_pf_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_21pyiA
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("getAnimation", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":189
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":198
  * 
  *     def getAnimation(self):
  *         return self.c_module.getAnimation()             # <<<<<<<<<<<<<<
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getAnimation()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_unsigned_char(__pyx_v_self->c_module.getAnimation()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":188
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":197
  *         self.c_module.setAnimation(num, tim)
  * 
  *     def getAnimation(self):             # <<<<<<<<<<<<<<
@@ -4514,6 +4620,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_chr, __pyx_k_chr, sizeof(__pyx_k_chr), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_col, __pyx_k_col, sizeof(__pyx_k_col), 0, 0, 1, 1},
+  {&__pyx_n_s_cols, __pyx_k_cols, sizeof(__pyx_k_cols), 0, 0, 1, 1},
+  {&__pyx_n_s_cols_2, __pyx_k_cols_2, sizeof(__pyx_k_cols_2), 0, 0, 1, 1},
   {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
   {&__pyx_n_s_f, __pyx_k_f, sizeof(__pyx_k_f), 0, 0, 1, 1},
   {&__pyx_n_s_flag, __pyx_k_flag, sizeof(__pyx_k_flag), 0, 0, 1, 1},
@@ -4531,6 +4639,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
+  {&__pyx_n_s_rows, __pyx_k_rows, sizeof(__pyx_k_rows), 0, 0, 1, 1},
+  {&__pyx_n_s_rows_2, __pyx_k_rows_2, sizeof(__pyx_k_rows_2), 0, 0, 1, 1},
   {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
   {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
   {&__pyx_n_s_sym, __pyx_k_sym, sizeof(__pyx_k_sym), 0, 0, 1, 1},
@@ -4540,8 +4650,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 66, __pyx_L1_error)
-  __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) __PYX_ERR(0, 125, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -4552,25 +4662,25 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":66
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":75
  *                 if not self.c_module.begin():
  * 
  *                     print("  .\n"             # <<<<<<<<<<<<<<
  *                           "    ,"
  *                           "     I2C.\n"
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_I2C_raspi_config_https_wiki_iar); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_I2C_raspi_config_https_wiki_iar); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":81
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":90
  *                 if not self.c_module.begin():
  * 
  *                     print("  .\n"             # <<<<<<<<<<<<<<
  *                           "    , "
  *                           "     I2C.\n"
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_I2C_raspi_config_https_wiki_iar_2); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_I2C_raspi_config_https_wiki_iar_2); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
@@ -5246,6 +5356,26 @@ if (!__Pyx_RefNanny) {
  * cdef class pyiArduinoI2Ckeyboard:
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_NO_BEGIN, __pyx_int_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
+
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":56
+ *     cdef iarduino_I2C_Keyboard c_module
+ * 
+ *     _cols = 5             # <<<<<<<<<<<<<<
+ *     _rows = 2
+ * 
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard->tp_dict, __pyx_n_s_cols_2, __pyx_int_5) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard);
+
+  /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":57
+ * 
+ *     _cols = 5
+ *     _rows = 2             # <<<<<<<<<<<<<<
+ * 
+ *     def __cinit__(self, address=None, cols=None, rows=None, auto=None):
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard->tp_dict, __pyx_n_s_rows_2, __pyx_int_2) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_21pyiArduinoI2Ckeyboard_21pyiArduinoI2Ckeyboard_pyiArduinoI2Ckeyboard);
 
   /* "pyiArduinoI2Ckeyboard/pyiArduinoI2Ckeyboard.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
