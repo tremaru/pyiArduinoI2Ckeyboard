@@ -135,24 +135,25 @@ class iarduino_I2C: public iarduino_I2C_BASE{
                 // аргументы: адрес_модуля, адрес_первого_регистра, указатель_на_массив, количество_байт
                 bool readBytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t sum)
                 {
-			uint8_t d = 10;
-			std::cout << "entering" << '\n';
+			// goddamn
+			const uint8_t d = 200;
+			//std::cout << "entering" << '\n';
                         if (ioctl(file_i2c, I2C_SLAVE, addr) < 0 || usleep(d)) {
-				std::cout << "fail 1" << '\n';
+				//std::cout << "fail 1" << '\n';
 				return false;
 			}
                         else if ((write(file_i2c, &reg, 1) != 1) || usleep(d)) {
-				std::cout << "fail 2" << '\n';
+				//std::cout << "fail 2" << '\n';
 				return false;
 			}
                         //usleep(100);
 			else if (read(file_i2c, data, sum) != sum || usleep(d)) {
-				std::cout << "fail 3" << '\n';
+				//std::cout << "fail 3" << '\n';
 				return false;
 			}
                         else {
 
-				std::cout << "success" << '\n';
+				//std::cout << "success" << '\n';
 				return true;
 			}
                 }

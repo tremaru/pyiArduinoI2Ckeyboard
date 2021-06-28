@@ -137,8 +137,8 @@ cdef class pyiArduinoI2Ckeyboard:
         self.c_module.flush()
 
     def setEncoding(self, col, row = None, sym = None):
-        if row is None and sym is None:
-            self.c_module.setEncStr(col)
+        if row is None and sym is None and isinstance(col, str):
+            self.c_module.setEncStr(col.encode('utf-8'))
         else:
             self.c_module.setEncoding(col, row, ord(sym[0]))
 
@@ -163,19 +163,28 @@ cdef class pyiArduinoI2Ckeyboard:
 
     def getKey(self, col, row, typ=None):
         if typ is None:
-            return self.c_module.getKeyChar(col, row)
+            if isinstance(col, str):
+                return self.c_module.getKeyChar(ord(col), row)
+            else:
+                return self.c_module.getKeyChar(col, row)
         else:
             return self.c_module.getKey(col, row, typ)
 
     def getTime(self, col, row, typ=None):
         if typ is None:
-            return self.c_module.getTimeChar(col, row)
+            if isinstance(col, str):
+                return self.c_module.getTimeChar(ord(col), row)
+            else:
+                return self.c_module.getTimeChar(col, row)
         else:
             return self.c_module.getTime(col, row, typ)
 
     def setLed(self, col, row, f=None):
         if f is None:
-            self.c_module.setLedChar(col, row)
+            if isinstance(col, str):
+                self.c_module.setLedChar(ord(col), row)
+            else:
+                self.c_module.setLedChar(col, row)
         else:
             self.c_module.setLed(col, row, f)
 
@@ -185,13 +194,19 @@ cdef class pyiArduinoI2Ckeyboard:
         else:
             return self.c_module.getLed(col, row)
 
-    def setLight(self, light, group):
+    def setLight(self, light, group=None):
+        if group is None:
+            group = LED_ALL
         self.c_module.setLight(light, group)
 
-    def getLight(self, group):
+    def getLight(self, group=None):
+        if group is None:
+            group = LED_ALL
         return self.c_module.getLight(group)
 
-    def setAnimation(self, num, tim):
+    def setAnimation(self, num, tim=None):
+        if tim is None:
+            tim = 200
         self.c_module.setAnimation(num, tim)
 
     def getAnimation(self):
