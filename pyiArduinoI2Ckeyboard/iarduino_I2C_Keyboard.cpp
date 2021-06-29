@@ -341,7 +341,7 @@ uint16_t iarduino_I2C_Keyboard::getKey			(uint8_t col, uint8_t row, uint8_t type
 						}																											//
 					}																												//
 				//	Устранение повторных срабатываний флагов:																		//
-					if( type == KEY_PUSHED | type == KEY_RELEASED | type == KEY_CHANGED ){delay(1);}								//	Флагам KBD_FLG_PUSHED, KBD_FLG_RELEASED и KBD_FLG_CHANGED может потребоваться время для сброса в регистре «REG_KBD_KEYS»+«i».
+					if( type == KEY_PUSHED || type == KEY_RELEASED || type == KEY_CHANGED ){delay(1);}								//	Флагам KBD_FLG_PUSHED, KBD_FLG_RELEASED и KBD_FLG_CHANGED может потребоваться время для сброса в регистре «REG_KBD_KEYS»+«i».
 				}																													//
 			}																														//
 		//	Возвращаем результат:																									//
