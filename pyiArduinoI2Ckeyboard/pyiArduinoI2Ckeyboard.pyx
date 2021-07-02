@@ -81,7 +81,7 @@ cdef class pyiArduinoI2Ckeyboard:
 
         else:
 
-            self.c_module = iarduino_I2C_Keyboard()
+            self.c_module = iarduino_I2C_Keyboard(0, cols, rows)
 
             if auto is None:
                 #sleep(.5)
