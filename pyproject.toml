@@ -1,6 +1,6 @@
 [project]
 name = "pyiArduinoI2Ckeyboard"
-version = "0.1.1"
+version = "0.2.1"
 description = "iarduino.ru module for Raspberry Pi"
 authors = [
     {name = "dron distortion", email = "cancelbutton@gmail.com"},
