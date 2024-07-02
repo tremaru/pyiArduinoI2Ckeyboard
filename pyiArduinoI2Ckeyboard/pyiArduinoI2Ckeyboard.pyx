@@ -53,46 +53,34 @@ NO_BEGIN = 1
 cdef class pyiArduinoI2Ckeyboard:
     cdef iarduino_I2C_Keyboard c_module
 
-    _cols = 5
+    _cols = 4
     _rows = 2
 
-    def __cinit__(self, address=None, cols=None, rows=None, auto=None):
+    def __cinit__(self, address=None, cols=None, rows=None, auto=None, bus=None):
 
         if cols is None:
             cols=self._cols
 
-        if rows is not None:
+        if rows is None:
             rows=self._rows
 
-        if address is not None:
+        if address is None:
+            address = 0
 
-            self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
+        self.c_module = iarduino_I2C_Keyboard(address, cols, rows)
 
-            if auto is None:
-                #sleep(.5)
-                if not self.c_module.begin():
+        if bus is not None:
+            self.changeBus(bus)
 
-                    print("ошибка инициализации модуля.\n"
-                          "Проверьте подключение и адрес модуля,"
-                          " возможно не включен интерфейс I2C.\n"
-                          " Запустите raspi-config и включите интерфейс"
-                          ", инструкция по включению:"
-                          " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
+        if auto is None:
+            if not self.c_module.begin():
 
-        else:
-
-            self.c_module = iarduino_I2C_Keyboard(0, cols, rows)
-
-            if auto is None:
-                #sleep(.5)
-                if not self.c_module.begin():
-
-                    print("ошибка инициализации модуля.\n"
-                          "Проверьте подключение и адрес модуля, "
-                          " возможно не включен интерфейс I2C.\n"
-                          " Запустите raspi-config и включите интерфейс"
-                          ", инструкция по включению:"
-                          " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
+                print("ошибка инициализации модуля.\n"
+                      "Проверьте подключение и адрес модуля,"
+                      " возможно не включен интерфейс I2C.\n"
+                      " Запустите raspi-config и включите интерфейс"
+                      ", инструкция по включению:"
+                      " https://wiki.iarduino.ru/page/raspberry-i2c-spi/")
 
     def begin(self):
         return self.c_module.begin()
@@ -127,7 +115,7 @@ cdef class pyiArduinoI2Ckeyboard:
     def readString(self, n, end=None):
         if end is None:
             end = True
-        cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(char))
+        cdef unsigned char* c_string = <unsigned char *> malloc((n + 1) * sizeof(unsigned char))
         if not c_string:
             return 0
         nbytes = self.c_module.readString(c_string, n, end)
@@ -212,3 +200,5 @@ cdef class pyiArduinoI2Ckeyboard:
     def getAnimation(self):
         return self.c_module.getAnimation()
 
+    def changeBus(self, bus):
+        return self.c_module.changeBus(bytes(bus, 'utf-8'))

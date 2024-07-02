@@ -1,3 +1,8 @@
+from libcpp.string cimport string
+
+cdef extern from "iarduino_I2C_PI.cpp":
+    pass
+
 cdef extern from "iarduino_I2C_Keyboard.cpp":
     pass
 
@@ -49,4 +54,4 @@ cdef extern from "iarduino_I2C_Keyboard.h":
         unsigned char getLight(unsigned char)
         void setAnimation(unsigned char, unsigned short)
         unsigned char getAnimation()
-
+        void changeBus(string)
